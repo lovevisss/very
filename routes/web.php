@@ -27,11 +27,11 @@ Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
 Route::post('get_Address',function(\Request $req){
-    if(isset($req['room']) && $req['name'])
+    if($req->get('room')  && $req->get('name'))
     {
-        if(strlen($req['name'])>0)
+        if(strlen($req->get('name'))>0)
         {
-            return view('buildings.teaching', ['name' => $req['name']]);
+            return view('buildings.teaching', ['name' => $req->get('name')]);
         }
     }
     return http_redirect()->back();
