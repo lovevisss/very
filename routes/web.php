@@ -26,7 +26,7 @@ Route::get('/lab', function(){
 Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
-Route::post('get_Address',function(Request $req){
+Route::post('get_Address',function(\Request $req){
     if(isset($req['room']) && $req['name'])
     {
         if(strlen($req['name'])>0)
