@@ -11,6 +11,8 @@
 |
 */
 
+use http\Env\Request;
+
 Route::get('/', function () {
     return view('home');
 });
@@ -24,6 +26,16 @@ Route::get('/lab', function(){
 Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
+Route::post('get_Address',function(Request $req){
+    if(isset($req['room']) && $req['name'])
+    {
+        if(strlen($req['name'])>0)
+        {
+            return view('buildings.teaching', ['name' => $req['name']]);
+        }
+    }
+    return http_redirect()->back();
+})->name('get_Address');
 
 //Route::get('/test', function(){
 //    return "test is right";
