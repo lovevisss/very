@@ -1,7 +1,7 @@
 <div class="links">
-                    <a href="{{route('teaching/zsy')}}">教学楼</a>
-                    <a href="{{route('lab')}}">实验室</a>
-                    <a href="{{route('administer')}}">行政楼</a>
+                    <a href="{{ route('teaching')}}">教学楼</a>
+                    <a href="{{ route('lab')}}">实验室</a>
+                    <a href="{{ route('administer')}}">行政楼</a>
                     <a href="https://forge.laravel.com">体育馆</a>
                     <a href="https://github.com/laravel/laravel">其他</a>
 </div>

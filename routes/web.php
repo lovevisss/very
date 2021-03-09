@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/teaching/{name?}', function($name = null){
     return view('buildings.teaching', ['name' => $name]);
-});
+})->name('teaching');
 Route::get('/lab', function(){
     return view('buildings.lab');
 });
