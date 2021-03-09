@@ -20,10 +20,10 @@ Route::get('/teaching/{name?}', function($name = null){
 })->name('teaching');
 Route::get('/lab', function(){
     return view('buildings.lab');
-});
+})->name('lab');
 Route::get('/administer', function(){
     return view('buildings.administer');
-});
+})->name('administer');
 
 //Route::get('/test', function(){
 //    return "test is right";
