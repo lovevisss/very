@@ -15,6 +15,15 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/teaching/{name?}', function($name = null){
+    return view('buildings.teaching', ['name' => $name]);
+});
+Route::get('/lab', function(){
+    return view('buildings.lab');
+});
+Route::get('/administer', function(){
+    return view('buildings.administer');
+});
 
 //Route::get('/test', function(){
 //    return "test is right";
