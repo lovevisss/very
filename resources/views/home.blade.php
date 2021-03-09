@@ -13,7 +13,7 @@
   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 <ul>
-	@for($i = 0; $i < 5; $i++)
+	@for($i = 0; $i < 11; $i++)
 		@if ($i%2 === 0)
 
 			<li>Iteration {{ $i+1 }}</li>
