@@ -11,7 +11,7 @@
 |
 */
 
-use http\Env\Request;
+
 
 Route::get('/', function () {
     return view('home');
