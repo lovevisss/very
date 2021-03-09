@@ -30,7 +30,7 @@ Route::post('get_Address',function(Request $req){
     {
         if(strlen($req['name'])>0)
         {
-            return view('buildings.teaching', ['name' => $req->get('name')]);
+            return view('search', ['name' => $req->get('name'), 'room' => $req['room']]);
         }
     }
     return http_redirect()->back();
