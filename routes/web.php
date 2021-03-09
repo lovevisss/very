@@ -26,9 +26,9 @@ Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
 Route::post('get_Address',function(Request $req){
-    if($req->input('room')  && $req->input('name'))
+    if($req['room']  && $req->input('name'))
     {
-        if(strlen($req->get('name'))>0)
+        if(strlen($req['name'])>0)
         {
             return view('buildings.teaching', ['name' => $req->get('name')]);
         }
