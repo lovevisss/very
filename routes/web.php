@@ -11,7 +11,7 @@
 |
 */
 
-
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('home');
@@ -26,7 +26,7 @@ Route::get('/lab', function(){
 Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
-Route::post('get_Address',function(\Request $req){
+Route::post('get_Address',function(Request $req){
     if($req->get('room')  && $req->get('name'))
     {
         if(strlen($req->get('name'))>0)
