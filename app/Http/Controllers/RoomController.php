@@ -10,15 +10,11 @@ class RoomController extends Controller
 
     public function postRoom(Request $req)
     {
-        if($req['room']  && $req->input('name'))
-        {
-            if(strlen($req['name'])>0)
-            {
-                return view('search', ['name' => $req->get('name'), 'room' => $req['room']]);
-            }
+         $this->validate($req, [
+             'name' => 'required',
+             'room' => 'required'
+         ]);
+        return view('search', ['name' => $req->get('name'), 'room' => $req['room']]);
 
-            return http_redirect()->back();
-        }
-        return http_redirect()->back();
     }
 }
