@@ -16,6 +16,8 @@ class RoomController extends Controller
             {
                 return view('search', ['name' => $req->get('name'), 'room' => $req['room']]);
             }
+
+            return http_redirect()->back();
         }
         return http_redirect()->back();
     }

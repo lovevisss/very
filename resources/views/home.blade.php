@@ -6,7 +6,7 @@
 
 @section('content')
 
-<form action="{{route('get_Address')}}" method="post">
+<form action="{{route('postRoom')}}" method="post">
     <label for="select-class">选择地点</label>
     <select name="room" id="select-class">
         <option value="2J201">2J201</option>
