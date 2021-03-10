@@ -29,16 +29,7 @@ Route::get('/lab', function(){
 Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
-Route::post('get_Address',function(Request $req){
-    if($req['room']  && $req->input('name'))
-    {
-        if(strlen($req['name'])>0)
-        {
-            return view('search', ['name' => $req->get('name'), 'room' => $req['room']]);
-        }
-    }
-    return http_redirect()->back();
-})->name('get_Address');
+Route::post('get_Address',['uses' => 'RoomController@postRoom', 'as' => '[postRoom']);
 
 //Route::get('/test', function(){
 //    return "test is right";
