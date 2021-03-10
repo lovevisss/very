@@ -29,7 +29,7 @@ Route::get('/lab', function(){
 Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
-Route::post('get_Address',['uses' => 'RoomController@postRoom', 'as' => '[postRoom']);
+Route::post('get_Address',['uses' => 'RoomController@postRoom', 'as' => 'postRoom']);
 
 //Route::get('/test', function(){
 //    return "test is right";
