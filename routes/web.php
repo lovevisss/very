@@ -15,6 +15,10 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('home');
 });
+Route::prefix('admin')->group(function(){
+
+    Route::get('/{building}/{room}', ['uses' => 'RoomController@getRoom', 'as' => 'findRoom']);
+});
 
 Route::get('/teaching/{name?}', function($name = null){
     return view('buildings.teaching', ['name' => $name]);
