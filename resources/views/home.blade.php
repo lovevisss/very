@@ -26,12 +26,11 @@
     <input type="hidden" value="{{Session::token()}}" name="_token">
 </form>
 <ul>
-	@for($i = 0; $i < 11; $i++)
-		@if ($i%2 === 0)
+	@foreach($rooms as $room)
 
-			<li>Iteration {{ $i+1 }}</li>
-		@endif
-	@endfor
+			<li><a href="{{route('getRoom', ['name' => $room->name])}}">Iteration {{ $room->name }} - room device {{$room->device_num}}</a></li>
+
+	@endforeach
 </ul>
  
 @endsection
