@@ -27,10 +27,7 @@
 </form>
 <ul>
 	@foreach($rooms as $room)
-
-			<li><a href="{{route('findRoom', ['building' => $room->name, 'room'=>$room->owner_id])}}">Iteration {{ $room->name }} - room device {{$room->device_num}}</a></li>
-
+        <li><a href="{{route('findRoom', ['building' => $room->name, 'room'=>$room->owner_id])}}">{{ $room->name }} - room device {{$room->device_num}}</a></li>
 	@endforeach
 </ul>
- 
 @endsection
