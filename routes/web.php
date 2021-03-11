@@ -26,10 +26,10 @@ Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
 Route::post('get_Address',['uses' => 'RoomController@postRoom', 'as' => 'postRoom']);
-Route::psot('addRoom', ['uses' => 'RoomController@addRoom', 'as' => 'addRoom']);
+Route::post('addRoom', ['uses' => 'RoomController@addRoom', 'as' => 'addRoom']);
 //Route::get('/test', function(){
 //    return "test is right";
-//});
+//});s
 
 Route::get('/test/{item?}', 'ProjectController@item');
 
