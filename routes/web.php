@@ -14,21 +14,19 @@ use Illuminate\Http\Request;
 
 Route::get('/', ['uses' =>'RoomController@getHome', 'as'=>'home']);
 Route::prefix('admin')->group(function(){
-
+    Route::get('/lab', ['uses' => 'RoomCotroller@getLab', 'as' => 'getLab']);
     Route::get('/{building}/{room}', ['uses' => 'RoomController@getRoom', 'as' => 'findRoom']);
 });
 
 Route::get('/teaching/{name?}', function($name = null){
     return view('buildings.teaching', ['name' => $name]);
 })->name('teaching');
-Route::get('/lab', function(){
-    return view('buildings.lab');
-})->name('lab');
+
 Route::get('/administer', function(){
     return view('buildings.administer');
 })->name('administer');
 Route::post('get_Address',['uses' => 'RoomController@postRoom', 'as' => 'postRoom']);
-
+Route::psot('addRoom', ['uses' => 'RoomController@addRoom', 'as' => 'addRoom']);
 //Route::get('/test', function(){
 //    return "test is right";
 //});

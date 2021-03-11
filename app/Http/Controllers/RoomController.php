@@ -24,4 +24,29 @@ class RoomController extends Controller
         return view('search', ['name' => $req->get('name'), 'room' => $req['room']]);
 
     }
+    public function getLab()
+    {
+        $rooms = Room::all();
+        return view('building.lab', ['rooms' => $rooms]);
+    }
+
+    public function addRoom(Request $req)
+    {
+        $this->validate($req,[
+            'name'=> 'required',
+
+            ]);
+        $room = new Room();
+        $room->building = $req->building;
+        $room->name = $req->name;
+        $room->owner_id = $req->owner_id;
+        $room->device_num = $req->device_num;
+        $room->save();
+        $rooms = Room::all();
+        return redirect(route('getLab', ['room' => $rooms]));
+
+
+
+    }
+
 }
