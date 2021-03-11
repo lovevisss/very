@@ -2,7 +2,7 @@
 
 use App\Room;
 use Illuminate\Database\Seeder;
-
+use Faker\Factory as Faker;
 class RoomSeeder extends Seeder
 {
     /**
