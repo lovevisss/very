@@ -27,7 +27,7 @@ class RoomController extends Controller
     public function getLab()
     {
         $rooms = Room::all();
-        return view('building.lab', ['rooms' => $rooms]);
+        return view('buildings.lab', ['rooms' => $rooms]);
     }
 
     public function addRoom(Request $req)
