@@ -13,7 +13,7 @@ class RoomController extends Controller
     }
 
     public function getRoom($building, $room = null){
-        $r = Room::where('name', $room)->where('building', $building)->first();
+        $r = Room::with('device')->where('name', $room)->where('building', $building)->first();
 
 
         return view('room.room', ['room' => $r]);
