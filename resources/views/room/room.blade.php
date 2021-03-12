@@ -8,6 +8,6 @@
 
     devices
         @foreach($room->devices() as $device)
-            {{$device->name}}
+            {{$device->type}}-{{$device->vlan}}
         @endforeach
 @endsection
