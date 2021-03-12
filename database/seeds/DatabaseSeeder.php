@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ArticlesTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
         $this->call(RoomSeeder::class);
+        $this->call(DeviceSeeder::class);
     }
 }
