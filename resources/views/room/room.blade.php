@@ -7,5 +7,7 @@
 
 
     devices
-{{ dd($room->devices)}}
+        @foreach($room->devices as $device)
+            {{$device->type}}-{{$device->vlan}}
+        @endforeach
 @endsection
