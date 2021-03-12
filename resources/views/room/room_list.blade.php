@@ -7,6 +7,5 @@
 
     <p>姓名</p>{{$name}}
 
-    devices
 
 @endsection

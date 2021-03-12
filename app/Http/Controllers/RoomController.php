@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers;
+use App\Device;
 use App\Project;
 use App\Room;
 use Illuminate\Http\Request;
@@ -12,7 +13,10 @@ class RoomController extends Controller
     }
 
     public function getRoom($building, $room = null){
-        return view('search', ['name' => $building, 'room' => $room]);
+        $r = Room::where(['name' , '=', $room], ['building', '=', $building])->first();
+
+
+        return view('room.room', ['room' => $r]);
     }
 
     public function postRoom(Request $req)
