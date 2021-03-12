@@ -28,7 +28,7 @@ class DeviceSeeder extends Seeder
 
         foreach ($devices as $device)
         {
-            Room::create(
+            Device::create(
                 [
                     'room_id' => 1,
                     'model' => $device[1],
