@@ -4,7 +4,7 @@
 @section('content')
     <ul>
         @foreach($rooms as $room)
-            <a href="route('findRoom', ['building' => $room->building, 'room' => $room->name])"><li>{{$room->building}}-{{$room->name}}  管理人-{{$room->owner_id}}</li></a>
+            <a href="{{route('findRoom', ['building' => $room->building, 'room' => $room->name])}}"><li>{{$room->building}}-{{$room->name}}  管理人-{{$room->owner_id}}</li></a>
         @endforeach
     </ul>
 
