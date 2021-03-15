@@ -13,7 +13,7 @@ class Room extends Model
 
     public function owner()
     {
-        return $this->belongsTo('App\User', 'id','owner_id');
+        return $this->belongsTo('App\User', 'owner_id','id');
     }
 
 }
