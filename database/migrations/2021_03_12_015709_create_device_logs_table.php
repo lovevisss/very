@@ -16,7 +16,7 @@ class CreateDeviceLogsTable extends Migration
         Schema::create('device_logs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('device_id');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }

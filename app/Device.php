@@ -10,4 +10,9 @@ class Device extends Model
     {
         return $this->belongsTo('App\Room');
     }
+
+    public function logs()
+    {
+        return $this->hasMany('App\DeviceLog');
+    }
 }

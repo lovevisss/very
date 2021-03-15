@@ -10,4 +10,10 @@ class Room extends Model
     {
         return $this->hasMany('App\Device');
     }
+
+    public function owner()
+    {
+        return $this->belongsTo('App\User', 'id','owner_id');
+    }
+
 }
