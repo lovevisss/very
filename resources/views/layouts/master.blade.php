@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>@yield('title')</title>
 		{{Html::style('css/main.css')}}
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.css">
 		@yield('style')
 	</head>
 
@@ -17,4 +17,6 @@
 
             </div>
 		</body>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
 </html>
