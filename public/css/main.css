@@ -31,9 +31,7 @@
                 text-align: center;
             }
 
-            .title {
-                font-size: 84px;
-            }
+
 
             .links > a {
                 color: #636b6f;
@@ -109,6 +107,9 @@
                  float: left;
              }
 
+             .r{
+                 float: right;
+             }
              .item .two .star{
                  cursor: pointer;
                  display: -webkit-box;
