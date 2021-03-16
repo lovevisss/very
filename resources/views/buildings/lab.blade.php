@@ -4,7 +4,17 @@
 @section('content')
     <ul>
         @foreach($rooms as $room)
-            <a href="{{route('findRoom', ['building' => $room->building, 'room' => $room->name])}}"><li>{{$room->building}}-{{$room->name}}  管理人-{{$room->owner->name}}</li></a>
+
+            <a class="item free " href="{{route('findRoom', ['building' => $room->building, 'room' => $room->name])}}" target="_blank" data-cid="1281" data-type="1" data-title="MySQL8.0零基础入门之从青铜到钻石">
+                <div class="img" style="background-image: url('http://img2.mukewang.com/5fe443100001d27905400304.jpg')"></div>
+                <p class="title ellipsis2">description</p>
+                <p class="one">管理人-{{$room->owner->name}}</p>
+
+                <p class="two clearfix">
+                    <span class="l">{{$room->building}}</span>
+                    <span class="star r"><i class="icon imv2-star-o"></i><i class="txt">{{$room->name}} </i></span>
+                </p>
+            </a>
         @endforeach
     </ul>
 
