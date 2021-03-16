@@ -32,7 +32,7 @@
         <label for="select-owner">管理人</label>
         <select name="owner_id" id="select-owner">
             @foreach($owners as $owner)
-                <option value="{{$owner->id}}">{{$onwer->name}}</option>
+                <option value="{{$owner->id}}">{{$owner->name}}</option>
             @endforeach
         </select>
 
