@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Device;
 use App\Project;
 use App\Room;
+use App\User;
 use Illuminate\Http\Request;
 class RoomController extends Controller
 {
@@ -31,7 +32,8 @@ class RoomController extends Controller
     public function getLab()
     {
         $rooms = Room::all();
-        return view('buildings.lab', ['rooms' => $rooms]);
+        $owners = User::all();
+        return view('buildings.lab', ['rooms' => $rooms, 'owners' => $owners]);
     }
 
     public function addRoom(Request $req)

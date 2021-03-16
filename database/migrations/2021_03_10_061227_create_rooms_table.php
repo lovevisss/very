@@ -18,7 +18,6 @@ class CreateRoomsTable extends Migration
             $table->timestamps();
             $table->string('building');
             $table->string('name');
-            $table->integer('device_num');
             $table->integer('owner_id');
 
         });

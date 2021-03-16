@@ -7,7 +7,7 @@
 
             <a class="item free " href="{{route('findRoom', ['building' => $room->building, 'room' => $room->name])}}" target="_blank" data-cid="1281" data-type="1" data-title="MySQL8.0零基础入门之从青铜到钻石">
                 <div class="img" style="background-image: url('/img/lab.jpg')"></div>
-                <p class="title ellipsis2">description</p>
+                <p class="title ellipsis2">$room->devices->length()</p>
                 <p class="one">管理人-{{$room->owner->name}}</p>
 
                 <p class="two clearfix">
@@ -17,7 +17,7 @@
             </a>
         @endforeach
     </ul>
-
+    <div class="clearfix"></div>
     <form action="{{route('addRoom')}}" method="post">
         <label for="select-class">地点</label>
         <select name="building" id="select-class">
@@ -31,13 +31,11 @@
 
         <label for="select-owner">管理人</label>
         <select name="owner_id" id="select-owner">
-            <option value="2">赵家荣</option>
-            <option value="3">吴玉龙</option>
-            <option value="4">黄宗良</option>
+            @foreach($owners as $owner)
+                <option value="{{$owner->id}}">{{$onwer->name}}</option>
+            @endforeach
         </select>
 
-        <label for="device_num">设备数量：</label>
-        <input type="text" name="device_num">
         <button type="submit">添加</button>
         <input type="hidden" value="{{Session::token()}}" name="_token">
     </form>
