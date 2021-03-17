@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 use App\Device;
-use App\Project;
 use App\Room;
 use App\User;
 use Illuminate\Http\Request;

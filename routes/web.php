@@ -27,9 +27,7 @@ Route::get('/administer', function(){
 })->name('administer');
 Route::post('get_Address',['uses' => 'RoomController@postRoom', 'as' => 'postRoom']);
 Route::post('addRoom', ['uses' => 'RoomController@addRoom', 'as' => 'addRoom']);
-//Route::get('/test', function(){
-//    return "test is right";
-//});s
+
 
 Route::get('/test/{item?}', 'ProjectController@item');
 
