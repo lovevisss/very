@@ -7,7 +7,7 @@
 
             <a class="item free " href="{{route('findRoom', ['building' => $room->building, 'room' => $room->name])}}" target="_blank" data-cid="1281" data-type="1" data-title="MySQL8.0零基础入门之从青铜到钻石">
                 <div class="img" style="background-image: url('/img/lab.jpg')"></div>
-                <p class="title ellipsis2">{{$room->devices->length()}}</p>
+                <p class="title ellipsis2">{{$room->devices->count()}}</p>
                 <p class="one">管理人-{{$room->owner->name}}</p>
 
                 <p class="two clearfix">
