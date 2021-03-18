@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <form action="{{route('findRoom')}}" method="post">
+    <form action="{{route('searchRoom')}}" method="post">
         <label for="name">房间：</label>
         <input type="text" name="name">
         <button type="submit">查找</button>
