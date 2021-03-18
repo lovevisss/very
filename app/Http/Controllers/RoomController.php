@@ -53,9 +53,9 @@ class RoomController extends Controller
 
     public function deleteRoom($id)
     {
-        $room = Room::find($id);
-        dd($room);
-        $room->delete();
+//        $room = Room::find($id);
+//        dd($room);
+//        $room->delete();
         return 'done';
         $rooms = Room::all();
         return redirect(route('getLab', ['room' => $rooms]))->with(['success' => '删除成功!']) ;
