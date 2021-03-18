@@ -19,6 +19,16 @@ class RoomController extends Controller
         return view('room.room', ['room' => $r]);
     }
 
+    public function findRoom($req)
+    {
+        if($req->get('name'))
+        {
+            $room = Room::where('name',$req->get('name'))->get();
+            $owners = User::all();
+            return view('buildings.lab', ['rooms' => $room, 'owners' => $owners]);
+        }
+    }
+
     public function postRoom(Request $req)
     {
          $this->validate($req, [
