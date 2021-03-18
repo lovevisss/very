@@ -7,3 +7,11 @@
         </ul>
     </div>
 @endif
+
+@if(Session::has('success'))
+    <section class="alert-success">
+
+        {{Session::get('success')}}
+    </section>
+
+@endif

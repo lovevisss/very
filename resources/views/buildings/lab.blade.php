@@ -2,7 +2,6 @@
 
 
 @section('content')
-    @include('includes.error')
     <ul>
         @foreach($rooms as $room)
 
@@ -36,8 +35,8 @@
                 <option value="{{$owner->id}}">{{$owner->name}}</option>
             @endforeach
         </select>
-
         <button type="submit">添加</button>
         <input type="hidden" value="{{Session::token()}}" name="_token">
     </form>
+    @include('includes.error')
 @endsection

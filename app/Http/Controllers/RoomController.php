@@ -47,7 +47,7 @@ class RoomController extends Controller
         $room->owner_id = $req->owner_id;
         $room->save();
         $rooms = Room::all();
-        return redirect(route('getLab', ['room' => $rooms]));
+        return redirect(route('getLab', ['room' => $rooms])->with(['success' => '创建成功！'])) ;
 
 
 
