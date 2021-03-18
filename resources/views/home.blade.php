@@ -5,15 +5,7 @@
 @endsection
 
 @section('content')
-@if(count($errors) >0)
-    <div>
-        <ul>
-            @foreach($errors->all() as $error)
-               <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+@include('includes.error')
 <form action="{{route('postRoom')}}" method="post">
     <label for="select-class">选择地点</label>
     <select name="room" id="select-class">

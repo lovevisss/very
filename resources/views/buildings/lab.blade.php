@@ -2,6 +2,7 @@
 
 
 @section('content')
+    @include('includes.error')
     <ul>
         @foreach($rooms as $room)
 
