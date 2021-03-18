@@ -41,6 +41,11 @@ class RoomController extends Controller
             'name'=> 'required',
 
             ]);
+        if(Room::where('building', $req->building)->where('name', $req->name)->first())
+        {
+            $rooms = Room::all();
+            return redirect(route('getLab', ['room' => $rooms]))->with(['success' => '已存在!']) ;
+        }
         $room = new Room();
         $room->building = $req->building;
         $room->name = $req->name;

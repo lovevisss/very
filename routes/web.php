@@ -16,7 +16,7 @@ Route::get('/', ['uses' =>'RoomController@getHome', 'as'=>'home']);
 Route::prefix('admin')->group(function(){
     Route::get('/lab', ['uses' => 'RoomController@getLab', 'as' => 'getLab']);
     Route::get('/delete/{id}', ['uses'=>'RoomController@deleteRoom', 'as'=>'deleteRoom']);
-    Route::get('/{building}/{room}', ['uses' => 'RoomController@getRoom', 'as' => 'findRoom']);
+    Route::get('/{building}/{room}', ['uses' => 'RoomController@getRoom', 'as' => 'findRoom']); //通配符的route要放到最后
 });
 
 Route::get('/teaching/{name?}', function($name = null){
