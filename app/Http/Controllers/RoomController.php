@@ -47,10 +47,17 @@ class RoomController extends Controller
         $room->owner_id = $req->owner_id;
         $room->save();
         $rooms = Room::all();
-        return redirect(route('getLab', ['room' => $rooms]))->with(['success' => '创建成功！']) ;
+        return redirect(route('getLab', ['room' => $rooms]))->with(['success' => '创建成功!']) ;
 
+    }
 
+    public function deleteRoom($id)
+    {
+        $room = Room::find($id);
+        $room->delete();
 
+        $rooms = Room::all();
+        return redirect(route('getLab', ['room' => $rooms]))->with(['success' => '删除成功!']) ;
     }
 
 }
