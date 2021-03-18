@@ -19,7 +19,7 @@ class RoomController extends Controller
         return view('room.room', ['room' => $r]);
     }
 
-    public function findRoom($req)
+    public function findRoom(Request $req)
     {
         if($req->get('name'))
         {
