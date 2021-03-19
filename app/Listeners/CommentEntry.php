@@ -2,9 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\Comment;
+use App\Events\CommentSave;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use App\Comment;
 
 class CommentEntry
 {
@@ -21,13 +22,13 @@ class CommentEntry
     /**
      * Handle the event.
      *
-     * @param  Comment  $event
+     * @param  CommentSave  $event
      * @return void
      */
-    public function handle(Comment $event)
+    public function handle(CommentSave $event)
     {
         $body = $event->body;
-        $comment = new App\Comment();
+        $comment = new Comment();
         $comment->body = $body;
         $comment->article_id = 2;
         $comment->save();

@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Device;
-use App\Events\Comment;
+use App\Events\CommentSave;
 use App\Events\Event;
 use App\Room;
 use App\User;
@@ -64,7 +64,7 @@ class RoomController extends Controller
         $room->owner_id = $req->owner_id;
         $room->save();
 
-        event(new Comment($room));
+        event(new CommentSave($room));
         $rooms = Room::all();
         return redirect(route('getLab', ['room' => $rooms]))->with(['success' => '创建成功!']) ;
 
