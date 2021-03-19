@@ -18,6 +18,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\CommentSave' => [
             'App\Listeners\CommentEntry',
+            'App\Listeners\SendUserNotification'
         ]
     ];
 
