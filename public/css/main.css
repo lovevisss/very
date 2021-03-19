@@ -121,3 +121,7 @@
                  -webkit-align-items: center;
                  align-items: center;
              }
+
+             .pagination{
+                 margin: 0 auto;
+             }
