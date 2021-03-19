@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Room;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -19,9 +20,9 @@ class Comment
      *
      * @return void
      */
-    public function __construct($body)
+    public function __construct(Room $room)
     {
-        $this->body = $body;
+        $this->body = $room->name;
     }
 
     /**
