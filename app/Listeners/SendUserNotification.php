@@ -29,7 +29,7 @@ class SendUserNotification
         $body = $event->body;
         $email = '530822987@qq.com';
         Mail::send('mail.user_notification', ['body' => $body], function ($message) use ($email) {
-            $message->from('admin@zufedfc.edu.cn');
+            $message->from('lovevisss@126.com');
             $message->to($email,'zsy');
             $message->subject('Thank you for create rooms');
         });
