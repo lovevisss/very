@@ -19,9 +19,9 @@ class Comment
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($body)
     {
-        //
+        $this->body = $body;
     }
 
     /**
