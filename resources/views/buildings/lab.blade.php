@@ -23,10 +23,8 @@
             </a>
         @endforeach
     </ul>
-    <div class="pagination">
-        {{ $rooms->links() }}
-    </div>
     <div class="clearfix"></div>
+    {{ $rooms->links() }}
     <form action="{{route('addRoom')}}" method="post">
         <label for="select-class">地点</label>
         <select name="building" id="select-class">
