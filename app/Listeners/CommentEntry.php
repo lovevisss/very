@@ -27,7 +27,7 @@ class CommentEntry
     public function handle(Comment $event)
     {
         $body = $event->body;
-        $comment = new Comment();
+        $comment = new App\Comment();
         $comment->body = $body;
         $comment->article_id = 2;
         $comment->save();
