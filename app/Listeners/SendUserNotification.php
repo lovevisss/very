@@ -26,6 +26,12 @@ class SendUserNotification
      */
     public function handle(CommentSave $event)
     {
-        //
+        $body = $event->body;
+        $email = '530822987@qq.com';
+        Mail::send('mail.user_notification', ['body' => $body], function ($message) use ($email) {
+            $message->from('admin@zufedfc.edu.cn');
+            $message->to($email,'zsy');
+            $message->subject('Thank you for create rooms');
+        });
     }
 }
