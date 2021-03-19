@@ -1,6 +1,5 @@
 @extends('layouts.master')
 
-
 @section('content')
     <form action="{{route('searchRoom')}}" method="post">
         <label for="name">房间：</label>
@@ -24,6 +23,9 @@
             </a>
         @endforeach
     </ul>
+    <div class="pagination">
+        {{ $room->links() }}
+    </div>
     <div class="clearfix"></div>
     <form action="{{route('addRoom')}}" method="post">
         <label for="select-class">地点</label>

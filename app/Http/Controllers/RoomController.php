@@ -40,7 +40,7 @@ class RoomController extends Controller
     }
     public function getLab()
     {
-        $rooms = Room::all();
+        $rooms = Room::paginate(12);
         $owners = User::all();
         return view('buildings.lab', ['rooms' => $rooms, 'owners' => $owners]);
     }
