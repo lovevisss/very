@@ -5,7 +5,7 @@ namespace App\Listeners;
 use App\Events\CommentSave;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-
+use Illuminate\Support\Facades\Mail;
 class SendUserNotification
 {
     /**
