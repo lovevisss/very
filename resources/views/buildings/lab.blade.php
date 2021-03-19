@@ -24,7 +24,7 @@
         @endforeach
     </ul>
     <div class="pagination">
-        {{ $room->links() }}
+        {{ $rooms->links() }}
     </div>
     <div class="clearfix"></div>
     <form action="{{route('addRoom')}}" method="post">
