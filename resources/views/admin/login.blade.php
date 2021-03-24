@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+    @include('includes.error')
     <form action="{{route('admin.postlogin')}}" method="post">
         <div class="input-group">
             <label for="name">用户：</label>
@@ -11,5 +12,6 @@
             <input type="text" name="password" id="password" placeholder="密码">
         </div>
         <button type="submit">登陆</button>
+        <input type="hidden" value="{{Session::token()}}" name="_token">
     </form>
 @endsection

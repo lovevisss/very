@@ -8,7 +8,7 @@ use App\Events\Event;
 use App\Room;
 use App\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
    public function getLogin()
@@ -16,8 +16,24 @@ class AdminController extends Controller
        return view('admin.login');
    }
 
+   public function getDashBoard(){
+       return view('admin.dashboard');
+   }
+
    public function postLogin(Request $request)
    {
-
+       $this->validate($request, [
+           'name' => 'required',
+           'password' => 'required'
+           ]
+       );
+        if(!Auth::attempt([
+            'name' => $request->name,
+            'password' => $request->password
+        ]))
+        {
+            return redirect()->back()->with(['fail' => 'could not login']);
+        }
+        return redirect()->route('admin.dashboard');
    }
 }

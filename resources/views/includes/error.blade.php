@@ -15,3 +15,10 @@
     </section>
 
 @endif
+@if(Session::has('fail'))
+    <section class="alert-danger">
+
+        {{Session::get('fail')}}
+    </section>
+
+@endif

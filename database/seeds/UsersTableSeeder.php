@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
                 'name' => $user[0],
                 'occupation' => $user[1],
                 'email' => $user[2].'@zufedfc.edu.cn',
-                'password' => '123456',
+                'password' => bcrypt($user[2]),
             ]);
         }
     }
