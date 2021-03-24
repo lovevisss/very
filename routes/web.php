@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 
 Route::get('/', ['uses' =>'RoomController@getHome', 'as'=>'home']);
 Route::prefix('admin')->group(function(){
+
+    Route::get('/login',['uses' => 'AdminController@getLogin', 'as' => 'admin.login']);
+    Route::post('login',['uses' => 'AdminController@postLogin', 'as' => 'admin.postlogin']);
     Route::get('/lab', ['uses' => 'RoomController@getLab', 'as' => 'getLab']);
     Route::get('/delete/{id}', ['uses'=>'RoomController@deleteRoom', 'as'=>'deleteRoom']);
     Route::get('/{building}/{room}', ['uses' => 'RoomController@getRoom', 'as' => 'findRoom']); //通配符的route要放到最后
@@ -31,7 +34,6 @@ Route::post('addRoom', ['uses' => 'RoomController@addRoom', 'as' => 'addRoom']);
 Route::post('findRoom', ['uses' => 'RoomController@findRoom', 'as'=>'searchRoom']);
 
 Route::get('/test/{item?}', 'ProjectController@item');
-
 Route::get('/testview', function ()
 {
     $test = 'dd';
