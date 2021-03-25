@@ -17,10 +17,10 @@ class AdminController extends Controller
    }
 
    public function getDashBoard(){
-       if(!Auth::check())
-       {
-           return redirect()->back();
-       }
+//       if(!Auth::check())
+//       {
+//           return redirect()->back();
+//       }
        $users = User::all();
        return view('admin.dashboard', ['users' => $users]);
    }
