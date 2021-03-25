@@ -32,6 +32,7 @@ class AdminController extends Controller
             'password' => $request['password']
         ]))
         {
+            dd($request['name']);
             return redirect()->back()->with(['fail' => 'could not login']);
         }
         return redirect()->route('admin.dashboard');
