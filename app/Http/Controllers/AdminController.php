@@ -29,7 +29,7 @@ class AdminController extends Controller
        );
         if(!Auth::attempt([
             'email' => $request['name'],
-            'password' => bcrypt($request['password'])
+            'password' => $request['password']
         ]))
         {
             dd($request['name']);
