@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 Route::get('/', ['uses' =>'RoomController@getHome', 'as'=>'home']);
 Route::prefix('admin')->group(function(){
 
-    Route::get('/login',['uses' => 'AdminController@getLogin', 'as' => 'admin.login']);
+    Route::get('/login',['uses' => 'AdminController@getLogin', 'as' => 'login']);
     Route::post('login',['uses' => 'AdminController@postLogin', 'as' => 'admin.postlogin']);
     Route::get('/logout', ['uses' => 'AdminController@Logout', 'as' => 'admin.logout']);
     Route::get('/dashboard', ['uses' => 'AdminController@getDashBoard', 'middleware' => 'auth', 'as' => 'admin.dashboard']);
