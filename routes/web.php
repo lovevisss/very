@@ -17,6 +17,7 @@ Route::prefix('admin')->group(function(){
 
     Route::get('/login',['uses' => 'AdminController@getLogin', 'as' => 'admin.login']);
     Route::post('login',['uses' => 'AdminController@postLogin', 'as' => 'admin.postlogin']);
+    Route::get('/logout', ['uses' => 'AdminController@Logout', 'as' => 'admin.logout']);
     Route::get('/dashboard', ['uses' => 'AdminController@getDashBoard', 'as' => 'admin.dashboard']);
     Route::get('/lab', ['uses' => 'RoomController@getLab', 'as' => 'getLab']);
     Route::get('/delete/{id}', ['uses'=>'RoomController@deleteRoom', 'as'=>'deleteRoom']);

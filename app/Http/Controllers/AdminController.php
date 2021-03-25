@@ -17,8 +17,18 @@ class AdminController extends Controller
    }
 
    public function getDashBoard(){
+       if(!Auth::check())
+       {
+           return redirect()->back();
+       }
        $users = User::all();
        return view('admin.dashboard', ['users' => $users]);
+   }
+
+   public function Logout()
+   {
+       Auth::logout();
+       return redirect()->route('home');
    }
 
    public function postLogin(Request $request)
