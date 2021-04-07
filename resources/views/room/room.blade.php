@@ -7,8 +7,6 @@
     <p>地址</p>{{$room->building}} - {{$room->name}}
 
 
-    devices
-        @foreach($room->devices as $device)
-            {{$device->type}}-{{$device->vlan}}
-        @endforeach
+    @include('Devices.index', ['room' => $room])
+
 @endsection

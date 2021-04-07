@@ -21,6 +21,7 @@ Route::prefix('admin')->group(function(){
         Route::get('/logout', ['uses' => 'AdminController@Logout', 'as' => 'admin.logout']);
         Route::get('/dashboard', ['uses' => 'AdminController@getDashBoard',  'as' => 'admin.dashboard']);
         Route::get('/lab', ['uses' => 'RoomController@getLab', 'as' => 'getLab']);
+        Route::get('/Device/{id}', ['uses' => 'DeviceController@getDevice', 'as' => 'device.single']);
         Route::get('/delete/{id}', ['uses'=>'RoomController@deleteRoom', 'as'=>'deleteRoom']);
         Route::get('/{building}/{room}', ['uses' => 'RoomController@getRoom', 'as' => 'findRoom']); //通配符的route要放到最后
         }
