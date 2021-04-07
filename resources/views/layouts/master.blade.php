@@ -10,13 +10,14 @@
 	</head>
 
 		<body>
+			@include('includes.header')
 			<div class="content">
-                @include('includes.header')
                 <div class="title m-b-md">
                     @yield('content')
                 </div>
-
             </div>
+			@include('includes.footer')
+
 		</body>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
