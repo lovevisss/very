@@ -7,6 +7,44 @@
                 margin: 0;
             }
 
+            nav{
+                border-bottom: 1px solid lightgray;
+                box-shadow: 0 2px 2px lightgray;
+                text-align: center;
+                font-size: 28px;
+                background-color: #ad67d2;
+            }
+
+            nav a {
+                color: white;
+                transition: color 0.2s;
+            }
+
+            nav a:hover,
+            nav a:active{
+                color: #ad67d2;
+            }
+
+            .active{
+                border-color: white;
+            }
+
+            .active a{
+                color: #ad67d2;
+            }
+
+
+            nav ul li{
+                display: inline-block;
+                padding: 32px 16px;
+                transition: background-color 0.2s;
+            }
+
+            nav ul li:hover{
+                background-color: white;
+            }
+
+
             .full-height {
                 height: 100vh;
             }
