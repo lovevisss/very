@@ -25,7 +25,7 @@ class RoomController extends Controller
     {
         if($req->get('name'))
         {
-            $room = Room::where('name',$req->get('name'))->get();
+            $room = Room::where('name',$req->get('name'))->where('building', $req->building)->first();
             $owners = User::all();
             return view('buildings.lab', ['rooms' => $room, 'owners' => $owners]);
         }
