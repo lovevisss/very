@@ -8,7 +8,6 @@
             }
 
             nav{
-                border-bottom: 1px solid lightgray;
                 box-shadow: 0 2px 2px lightgray;
                 text-align: center;
                 font-size: 28px;
@@ -23,6 +22,7 @@
             nav a:hover,
             nav a:active{
                 color: #ad67d2;
+                text-decoration: none;
             }
 
             .active{
@@ -42,6 +42,11 @@
 
             nav ul li:hover{
                 background-color: white;
+
+            }
+
+            nav ul li:hover a{
+                color: #ad67d2;
             }
 
 
